@@ -1,4 +1,4 @@
-package main
+package file
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 var match = 0
 var ch = make(chan int, 100)
 
-//用于文档查找关键字
+//用于多目录下在文档查找关键字
 func FindFile(path string, name string) {
 	count := 0
 	var pathgroup [50]string
@@ -56,7 +56,7 @@ func Findname(paths []string, name string) {
 	fmt.Printf("filenum:%d\n", match)
 }
 
-//用于查找相关文件
+//用于多目录下查找相关文件
 func SelectFile(path string, name string) {
 	count := 0
 	var pathgroup [50]string
@@ -79,31 +79,4 @@ func SelectFile(path string, name string) {
 	})
 
 }
-func main() {
-	// args := os.Args
-	// if len(args) < 3 {
-	// 	fmt.Println("path name")
-	// 	return
-	// }
-	// if len(args) > 3 {
-	// 	fmt.Println("path name")
-	// 	return
-	// }
-	// path := args[1]
-	// text := args[2]
 
-	var path string
-	var name string
-	path = `F:\soft`
-	name = "test"
-
-	_, err := os.Stat(path)
-
-	fmt.Println(path, name)
-	if err != nil {
-		fmt.Println("path error")
-	} else {
-		FindFile(path, name)
-		SelectFile(path, name)
-	}
-}
