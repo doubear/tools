@@ -95,7 +95,7 @@ public class Hello  extends Thread {
     }
     
     public static void main(String[] args) throws InterruptedException{
-    	String bm = "lock test zhaoxin";
+    	String bm = "lock test doubear";
     	numcount = Integer.parseInt(args[1]);
     	int num = numcount;
     	times = Integer.parseInt(args[0]);  	
